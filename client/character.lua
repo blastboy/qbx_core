@@ -181,7 +181,7 @@ local function spawnDefault() -- We use a callback to make the server wait on th
     TriggerEvent('qb-clothes:client:CreateFirstCharacter')
 end
 
-local function spawnLastLocation()
+local function spawn(coords)
     DoScreenFadeOut(500)
 
     while not IsScreenFadedOut() do
@@ -190,12 +190,8 @@ local function spawnLastLocation()
 
     destroyPreviewCam()
 
-    pcall(function() exports.spawnmanager:spawnPlayer({
-        x = QBX.PlayerData.position.x,
-        y = QBX.PlayerData.position.y,
-        z = QBX.PlayerData.position.z,
-        heading = QBX.PlayerData.position.w
-    }) end)
+    SetEntityCoords(cache.ped, coords.x, coords.y, coords.z)
+    SetEntityHeading(cache.ped, coords.w)
 
     TriggerServerEvent('QBCore:Server:OnPlayerLoaded')
     TriggerEvent('QBCore:Client:OnPlayerLoaded')
@@ -317,14 +313,14 @@ local function chooseCharacter()
                         icon = 'play',
                         onSelect = function()
                             DoScreenFadeOut(10)
-                            lib.callback.await('qbx_core:server:loadCharacter', false, character.citizenid)
+                            local player = lib.callback.await('qbx_core:server:loadCharacter', false, character.citizenid)
                             if GetResourceState('qbx-apartments'):find('start') then
                                 TriggerEvent('apartments:client:setupSpawnUI', { citizenid = character.citizenid })
                             elseif GetResourceState('qbx_spawn'):find('start') then
                                 TriggerEvent('qb-spawn:client:setupSpawns', { citizenid = character.citizenid })
                                 TriggerEvent('qb-spawn:client:openUI', true)
                             else
-                                spawnLastLocation()
+                                spawn(player.PlayerData.position)
                             end
                             destroyPreviewCam()
                         end

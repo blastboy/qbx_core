@@ -59,6 +59,7 @@ lib.callback.register('qbx_core:server:loadCharacter', function(source, citizenI
     SetPlayerRoutingBucket(source, 0)
     TriggerEvent('qb-log:server:CreateLog', 'joinleave', 'Loaded', 'green', '**'.. GetPlayerName(source) .. '** ('..(GetPlayerIdentifierByType(source, 'discord') or 'undefined') ..' |  ||'  ..(GetPlayerIdentifierByType(source, 'ip') or 'undefined') ..  '|| | ' ..(GetPlayerIdentifierByType(source, 'license2') or GetPlayerIdentifierByType(source, 'license') or 'undefined') ..' | ' ..citizenId..' | '..source..') loaded..')
     lib.print.info(GetPlayerName(source)..' (Citizen ID: '..citizenId..') has succesfully loaded!')
+    return player
 end)
 
 ---@param data unknown
