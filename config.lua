@@ -8,35 +8,21 @@ Config.StatusInterval = 5 -- how often to check hunger/thirst status in minutes
 Config.Characters = {}
 Config.LoadingModelsTimeout = 10000 -- Waiting time for ox_lib to load the models before throws an error, for low specs pc
 Config.Characters.UseExternalCharacters = false -- Whether you have an external character management resource. (If true, disables the character management inside the core)
-Config.Characters.EnableDeleteButton = true -- Whether players should be able to delete characters themselves.
+Config.Characters.EnableDeleteButton = false -- Whether players should be able to delete characters themselves.
 Config.Characters.StartingApartment = true -- If set to false, skips apartment choice in the beginning (requires qbx_spawn if true)
-Config.Characters.DefaultNumberOfCharacters = 3 -- Define maximum amount of default characters (maximum 3 characters defined by default)
+Config.Characters.DefaultNumberOfCharacters = 1 -- Define maximum amount of default characters (maximum 3 characters defined by default)
 Config.Characters.PlayersNumberOfCharacters = { -- Define maximum amount of player characters by rockstar license (you can find this license in your server's database in the player table)
-    ['license2:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx'] = 5,
+    ['license2:dfb4d350844156650c6b984568f81d50110547f4'] = 5,
+    ['license2:95cbd550b0e4e2ac49e33d280f6bb181cab70314'] = 5,
+    ['license2:bf1154c3091195c83b53bdd35f677e3508f63c84'] = 5,
 }
 Config.Characters.ProfanityWords = {
     ['bad word'] = true
 }
 Config.Characters.Locations = { -- Spawn locations for multichar, these are chosen randomly
     {
-        pedCoords = vec4(969.25, 72.61, 116.18, 276.55),
-        camCoords = vec4(972.2, 72.9, 116.68, 97.27),
-    },
-    {
-        pedCoords = vec4(1104.49, 195.9, -49.44, 44.22),
-        camCoords = vec4(1102.29, 198.14, -48.86, 225.07),
-    },
-    {
         pedCoords = vec4(-2163.87, 1134.51, -24.37, 310.05),
         camCoords = vec4(-2161.7, 1136.4, -23.77, 131.52),
-    },
-    {
-        pedCoords = vec4(-996.71, -68.07, -99.0, 57.61),
-        camCoords = vec4(-999.90, -66.30, -98.45, 241.68),
-    },
-    {
-        pedCoords = vec4(-1023.45, -418.42, 67.66, 205.69),
-        camCoords = vec4(-1021.8, -421.7, 68.14, 27.11),
     },
     {
         pedCoords = vec4(2265.27, 2925.02, -84.8, 267.77),
@@ -49,15 +35,15 @@ Config.Money = {}
 ---@alias MoneyType 'cash' | 'bank' | 'crypto'
 ---@alias Money {cash: number, bank: number, crypto: number}
 ---@type Money
-Config.Money.MoneyTypes = { cash = 500, bank = 5000, crypto = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
+Config.Money.MoneyTypes = { cash = 500, bank = 45000, crypto = 0 } -- type = startamount - Add or remove money types for your server (for ex. blackmoney = 0), remember once added it will not be removed from the database!
 
 Config.Money.DontAllowMinus = { 'cash', 'crypto' } -- Money that is not allowed going in minus
-Config.Money.PaycheckTimeout = 10 -- The time in minutes that it will give the paycheck
+Config.Money.PaycheckTimeout = 15 -- The time in minutes that it will give the paycheck
 Config.Money.PaycheckSociety = false -- If true paycheck will come from the society account that the player is employed at, requires qb-management
 
 Config.Player = {}
-Config.Player.HungerRate = 4.2 -- Rate at which hunger goes down.
-Config.Player.ThirstRate = 3.8 -- Rate at which thirst goes down.
+Config.Player.HungerRate = 3.2 -- Rate at which hunger goes down.
+Config.Player.ThirstRate = 2.8 -- Rate at which thirst goes down.
 
 ---@enum BloodType
 Config.Player.Bloodtypes = {
@@ -74,14 +60,14 @@ Config.Player.IdentifierTypes = {
     },
     AccountNumber = {
         valueFunction = function()
-            return 'US0' .. math.random(1, 9) .. 'QBX' .. math.random(1111, 9999) .. math.random(1111, 9999) .. math.random(11, 99)
+            return 'LL0' .. math.random(1, 9) .. 'LLRP' .. math.random(1111, 9999) .. math.random(1111, 9999) .. math.random(11, 99)
         end,
     },
     PhoneNumber = {
         valueFunction = function()
-            return math.random(100,999) .. math.random(1000000,9999999)
+            return "06" .. tostring(math.random(10000000, 99999999))
         end,
-    },
+    },    
     FingerId = {
         valueFunction = function()
             return tostring(RandomLetter(2) .. RandomNumber(3) .. RandomLetter(1) .. RandomNumber(2) .. RandomLetter(3) .. RandomNumber(4))
@@ -89,7 +75,7 @@ Config.Player.IdentifierTypes = {
     },
     WalletId = {
         valueFunction = function()
-            return 'QB-' .. math.random(11111111, 99999999)
+            return 'LLRP-' .. math.random(11111111, 99999999)
         end,
     },
     SerialNumber = {
@@ -106,12 +92,12 @@ Config.Server.Uptime = 0 -- Time the server has been up.
 Config.Server.Whitelist = false -- Enable or disable whitelist on the server
 Config.Server.WhitelistPermission = 'admin' -- Permission that's able to enter the server when the whitelist is on
 Config.Server.PVP = true -- Enable or disable pvp on the server (Ability to shoot other players)
-Config.Server.Discord = "" -- Discord invite link
+Config.Server.Discord = "http://discord.gg/laagland" -- Discord invite link
 Config.Server.CheckDuplicateLicense = true -- Check for duplicate rockstar license on join
 Config.Server.Permissions = { 'god', 'admin', 'mod' } -- Add as many groups as you want here after creating them in your server.cfg
-Config.Server.PauseMapText = 'Powered by Qbox' -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
+Config.Server.PauseMapText = 'LaagLand' -- Text shown above the map when ESC is pressed. If left empty 'FiveM' will appear
 
-Config.NotifyPosition = 'top-right' -- 'top' | 'top-right' | 'top-left' | 'bottom' | 'bottom-right' | 'bottom-left'
+Config.NotifyPosition = 'top' -- 'top' | 'top-right' | 'top-left' | 'bottom' | 'bottom-right' | 'bottom-left'
 
 Config.Discord = {} -- Discord Rich Presence config
 Config.Discord.AppId = '' -- This is the Application ID (Replace this with you own)
@@ -149,6 +135,7 @@ Config.CharacterDataTables = {
     player_mails = 'citizenid',
     player_outfits = 'citizenid',
     player_vehicles = 'citizenid',
+    factories = 'user_id',
 } -- Rows to be deleted when the character is deleted
 
 ---@type { name: string, amount: integer, metadata: fun(source: number): table }

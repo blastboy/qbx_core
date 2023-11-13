@@ -183,8 +183,8 @@ if isServer then
     ---@param model string | integer
     ---@param coords? vector4 defaults to player's position
     ---@param warp? boolean
-    ---@param props? table vehicle properties to set https://github.com/overextended/ox_lib/blob/master/resource/vehicleProperties/client.lua#L3
     ---@return integer? netId
+    ---@param props? table vehicle properties to set https://github.com/overextended/ox_lib/blob/master/resource/vehicleProperties/client.lua#L3
     function SpawnVehicle(source, model, coords, warp, props) -- luacheck: ignore
         model = type(model) == 'string' and joaat(model) or model
 
@@ -216,12 +216,11 @@ if isServer then
         end
 
         if warp then SetPedIntoVehicle(ped, veh, -1) end
-        
+
         local owner = lib.waitFor(function()
             local owner = NetworkGetEntityOwner(veh)
             if owner ~= -1 then return owner end
         end, 5000)
-        
         local netId = NetworkGetNetworkIdFromEntity(veh)
         TriggerClientEvent('qbx_core:client:vehicleSpawned', owner, netId, props)
         return netId

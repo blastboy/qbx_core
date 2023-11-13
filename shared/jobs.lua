@@ -14,7 +14,7 @@ return {
 		grades = {
             [0] = {
                 name = 'Freelancer',
-                payment = 10
+                payment = 350
             },
         },
 	},
@@ -26,24 +26,24 @@ return {
 		grades = {
             [0] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 450
             },
 			[1] = {
                 name = 'Officer',
-                payment = 75
+                payment = 750
             },
 			[2] = {
                 name = 'Sergeant',
-                payment = 100
+                payment = 950
             },
 			[3] = {
                 name = 'Lieutenant',
-                payment = 125
+                payment = 1050
             },
 			[4] = {
                 name = 'Chief',
 				isboss = true,
-                payment = 150
+                payment = 1250
             },
         },
 	},
@@ -55,24 +55,24 @@ return {
 		grades = {
             [0] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 450
             },
 			[1] = {
                 name = 'Officer',
-                payment = 75
+                payment = 750
             },
 			[2] = {
                 name = 'Sergeant',
-                payment = 100
+                payment = 950
             },
 			[3] = {
                 name = 'Lieutenant',
-                payment = 125
+                payment = 1050
             },
 			[4] = {
                 name = 'Chief',
 				isboss = true,
-                payment = 150
+                payment = 1250
             },
         },
 	},
@@ -84,24 +84,24 @@ return {
 		grades = {
             [0] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 450
             },
 			[1] = {
                 name = 'Officer',
-                payment = 75
+                payment = 750
             },
 			[2] = {
                 name = 'Sergeant',
-                payment = 100
+                payment = 950
             },
 			[3] = {
                 name = 'Lieutenant',
-                payment = 125
+                payment = 1050
             },
 			[4] = {
                 name = 'Chief',
 				isboss = true,
-                payment = 150
+                payment = 1250
             },
         },
 	},
@@ -113,24 +113,24 @@ return {
 		grades = {
             [0] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 650
             },
 			[1] = {
                 name = 'Paramedic',
-                payment = 75
+                payment = 950
             },
 			[2] = {
                 name = 'Doctor',
-                payment = 100
+                payment = 1150
             },
 			[3] = {
                 name = 'Surgeon',
-                payment = 125
+                payment = 1350
             },
 			[4] = {
                 name = 'Chief',
 				isboss = true,
-                payment = 150
+                payment = 1550
             },
         },
 	},
@@ -193,11 +193,11 @@ return {
     ['bus'] = {
 		label = 'Bus',
 		defaultDuty = true,
-		offDutyPay = false,
+		offDutyPay = true,
 		grades = {
             [0] = {
                 name = 'Driver',
-                payment = 50
+                payment = 350
             },
 		},
 	},
@@ -237,24 +237,24 @@ return {
 		grades = {
             [0] = {
                 name = 'Recruit',
-                payment = 50
+                payment = 450
             },
 			[1] = {
                 name = 'Novice',
-                payment = 75
+                payment = 750
             },
 			[2] = {
                 name = 'Experienced',
-                payment = 100
+                payment = 950
             },
 			[3] = {
                 name = 'Advanced',
-                payment = 125
+                payment = 1050
             },
 			[4] = {
                 name = 'Manager',
 				isboss = true,
-                payment = 150
+                payment = 1250
             },
         },
 	},
@@ -287,7 +287,7 @@ return {
 		grades = {
             [0] = {
                 name = 'Journalist',
-                payment = 50
+                payment = 450
             },
         },
 	},
@@ -298,7 +298,7 @@ return {
 		grades = {
             [0] = {
                 name = 'Driver',
-                payment = 50
+                payment = 350
             },
         },
 	},
@@ -320,7 +320,7 @@ return {
 		grades = {
             [0] = {
                 name = 'Collector',
-                payment = 50
+                payment = 350
             },
         },
 	},
@@ -331,7 +331,7 @@ return {
 		grades = {
             [0] = {
                 name = 'Picker',
-                payment = 50
+                payment = 350
             },
         },
 	},
@@ -342,8 +342,44 @@ return {
 		grades = {
             [0] = {
                 name = 'Sales',
-                payment = 50
+                payment = 350
             },
+        },
+	},
+    ['catcafe'] = {
+		label = 'Cat Cafe',
+		defaultDuty = true,
+        offDutyPay = false,
+		grades = {
+            [0] = { name = 'Recruit', payment = 350 },
+			[1] = { name = 'Novice', payment = 450 },
+			[2] = { name = 'Experienced', payment = 550 },
+			[3] = { name = 'Advanced', payment = 650 },
+			[4] = { name = 'Manager', isboss = true, payment = 750 },
+        },
+	},
+    ['henhouse'] = {
+		label = 'Hen House',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = { name = 'Recruit', payment = 350 },
+			[1] = { name = 'Novice', payment = 450 },
+			[2] = { name = 'Experienced', payment = 550 },
+			[3] = { name = 'Advanced', payment = 650 },
+			[4] = { name = 'Manager', isboss = true, payment = 750 },
+        },
+	},
+    ['beanmachine'] = {
+		label = 'Bean Machine',
+		defaultDuty = true,
+		offDutyPay = false,
+		grades = {
+            [0] = { name = 'Recruit', payment = 350 },
+			[1] = { name = 'Novice', payment = 450 },
+			[2] = { name = 'Experienced', payment = 550 },
+			[3] = { name = 'Advanced', payment = 650 },
+			[4] = { name = 'Manager', isboss = true, payment = 750 },
         },
 	},
 }

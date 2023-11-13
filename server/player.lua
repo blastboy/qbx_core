@@ -355,6 +355,9 @@ function CreatePlayer(playerData, Offline)
         return true
     end
 
+
+
+
     ---@param moneytype MoneyType
     ---@param amount number
     ---@param reason? string
@@ -414,13 +417,10 @@ function CreatePlayer(playerData, Offline)
         return true
     end
 
-    ---@param moneytype MoneyType
-    ---@return boolean | number amount or false if moneytype does not exist
-    function self.Functions.GetMoney(moneytype)
-        if not moneytype then return false end
-        return self.PlayerData.money[moneytype]
-    end
-
+function self.Functions.GetMoney(moneytype)
+    if not moneytype then return false end
+    return self.PlayerData.money[moneytype]
+end
     ---@param cardNumber number
     function self.Functions.SetCreditCard(cardNumber)
         self.PlayerData.charinfo.card = cardNumber

@@ -217,13 +217,11 @@ function functions.SetVehicleProperties(vehicle, props)
     if props.headlightColor then
         SetVehicleHeadlightsColour(vehicle, props.headlightColor)
     end
-
     if not props.tyres then
         for i = 0, 7 do
             props.tyres[i] = props.tireBurstCompletely and props.tireBurstCompletely[i] and 2 or props.tireBurstState and props.tireBurstState[i] and 1 or nil
         end
     end
-
     local numWindowsDamaged = 0
     if props.windowStatus and not props.windows then
         for i, isDamaged in pairs(props.windowStatus) do
@@ -234,6 +232,7 @@ function functions.SetVehicleProperties(vehicle, props)
         end
     end
 
+    
     local numDoorsDamaged = 0
     if props.doorStatus and not props.doors then
         for i, isDamaged in pairs(props.doorStatus) do

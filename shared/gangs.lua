@@ -12,109 +12,37 @@ return {
             },
         },
 	},
-	['lostmc'] = {
-		label = 'The Lost MC',
+    ['soa'] = {
+		label = 'Sons Of Anarchy',
 		grades = {
-            [0] = {
-                name = 'Recruit'
-            },
-			[1] = {
-                name = 'Enforcer'
-            },
-			[2] = {
-                name = 'Shot Caller'
-            },
-			[3] = {
-                name = 'Boss',
-				isboss = true
-            },
+            ['0'] = { name = 'Prospect', },
+			['1'] = { name = 'Nomad', },
+			['2'] = { name = 'Recruiter', },
+			['3'] = { name = 'Enforcer', },
+			['4'] = { name = 'Road Captain', },
+			['5'] = { name = 'Sgt. At Arms', },
+			['6'] = { name = 'Treasurer', 		isboss = true, },
+			['7'] = { name = 'Vice-President', 	isboss = true, },
+			['8'] = { name = 'President', 		isboss = true, },
         },
 	},
-	['ballas'] = {
-		label = 'Ballas',
+	['scarface'] = {
+		label = 'Scarface',
 		grades = {
             [0] = {
-                name = 'Recruit'
+                name = 'Soldier'
             },
 			[1] = {
-                name = 'Enforcer'
+                name = 'Capo'
             },
 			[2] = {
-                name = 'Shot Caller'
+                name = 'Consigliere'
             },
 			[3] = {
-                name = 'Boss',
+                name = 'Underboss',
 				isboss = true
             },
-        },
-	},
-	['vagos'] = {
-		label = 'Vagos',
-		grades = {
-            [0] = {
-                name = 'Recruit'
-            },
-			[1] = {
-                name = 'Enforcer'
-            },
-			[2] = {
-                name = 'Shot Caller'
-            },
-			[3] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-	['cartel'] = {
-		label = 'Cartel',
-		grades = {
-            [0] = {
-                name = 'Recruit'
-            },
-			[1] = {
-                name = 'Enforcer'
-            },
-			[2] = {
-                name = 'Shot Caller'
-            },
-			[3] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-	['families'] = {
-		label = 'Families',
-		grades = {
-            [0] = {
-                name = 'Recruit'
-            },
-			[1] = {
-                name = 'Enforcer'
-            },
-			[2] = {
-                name = 'Shot Caller'
-            },
-			[3] = {
-                name = 'Boss',
-				isboss = true
-            },
-        },
-	},
-	['triads'] = {
-		label = 'Triads',
-		grades = {
-            [0] = {
-                name = 'Recruit'
-            },
-			[1] = {
-                name = 'Enforcer'
-            },
-			[2] = {
-                name = 'Shot Caller'
-            },
-			[3] = {
+            [3] = {
                 name = 'Boss',
 				isboss = true
             },
